@@ -1,7 +1,8 @@
 %define _disable_source_fetch 0
+%define _unpackaged_files_terminate_build 0
+
 %global toolchain clang
 %global pkgname xwayland
-
 %global default_font_path "catalogue:/etc/X11/fontpath.d,built-ins"
 
 Summary:   Xwayland
@@ -10,9 +11,11 @@ Version:   23.2.2
 Release:   2%{?dist}.clang
 
 URL:       http://www.x.org
-Source0:   https://www.x.org/pub/individual/xserver/%{pkgname}-%{version}.tar.xz
+Source0:   %{pkgname}-%{version}.tar.xz
 
-Patch0: https://raw.githubusercontent.com/TrixieUA/copr-trixieua/main/xwayland/patches/f39/1120.patch
+#Patch0: https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1120.patch
+
+Patch: https://gitlab.freedesktop.org/xorg/xserver/-/commit/cfcbb075c23fc668e84a381c9c2c165a95798cf4.patch
 
 
 License:   MIT
