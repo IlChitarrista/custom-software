@@ -1,4 +1,6 @@
 %define _disable_source_fetch 0
+%define _unpackaged_files_terminate_build 0
+
 %global toolchain clang
 %global pkgname xwayland
 %global toolchain clang
